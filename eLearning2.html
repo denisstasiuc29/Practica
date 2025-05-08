@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>eLearning CUTM</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: bold;
+      color: #ff6b00;
+      font-size: 20px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #555;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      display: flex;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .main { flex: 3; }
+    .sidebar {
+      flex: 1;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: #999;
+      margin: 10px 0 20px 0;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .course-card {
+      background: #fff;
+      display: flex;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+    .course-card img {
+      width: 200px;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .course-content h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 6px;
+    }
+
+    .price {
+      color: green;
+      font-size: 14px;
+    }
+
+    .view-more {
+      text-align: right;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #fff;
+      border-top: 1px solid #ddd;
+      padding: 40px 60px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 13px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">eLearning CUTM</div>
+    <nav>
+      <a href="eLearning.html">Home</a>
+      <a href="eLearning2.html">Courses</a>
+      <a href="#">Blog</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="main">
+      <div class="breadcrumb">Home > Courses</div>
+      <h2>All Courses</h2>
+
+      <!-- Multiple courses -->
+      <div class="course-card">
+        <img src="https://eduma.thimpress.com/demo-online-learning/wp-content/uploads/sites/104/2022/11/create-an-lms-website-with-learnpress-4.png" alt="Course 1" />
+        <div class="course-content">
+          <h3>Create An LMS Website With LearnPress</h3>
+          <div class="meta">2 Weeks | 50 Students | All Levels | 30 Lessons</div>
+          <div class="price">$100 / Free</div>
+          <div class="view-more">View More</div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://media.licdn.com/dms/image/v2/D4D12AQFehrfIUkskAg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1737539101586?e=2147483647&v=beta&t=CuQ6Nva3WpDR2OxpYvE0fE-hOIGiVRLxcJU0BxlmUCo" alt="Course 2" />
+        <div class="course-content">
+          <h3>Mastering Web Development with HTML, CSS & JS</h3>
+          <div class="meta">4 Weeks | 120 Students | Beginner | 40 Lessons</div>
+          <div class="price">$120</div>
+          <div class="view-more">View More</div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://dotnettrickscloud.blob.core.windows.net/article/3720230404141603.webp" alt="Course 3" />
+        <div class="course-content">
+          <h3>Introduction to Python Programming</h3>
+          <div class="meta">3 Weeks | 80 Students | All Levels | 25 Lessons</div>
+          <div class="price">Free</div>
+          <div class="view-more">View More</div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://www.frac.tl/wp-content/uploads/2017/01/startup-marketing-strategy-image-1.png" alt="Course 4" />
+        <div class="course-content">
+          <h3>Business Strategies for Startups</h3>
+          <div class="meta">6 Weeks | 90 Students | Intermediate | 35 Lessons</div>
+          <div class="price">$200</div>
+          <div class="view-more">View More</div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://helpx-prod.scene7.com/is/image/HelpxProd/5407-graphic-design-basics_1408x792-1?$pjpeg$&jpegSize=300&wid=1408" alt="Course 5" />
+        <div class="course-content">
+          <h3>Graphic Design Basics: Adobe Photoshop</h3>
+          <div class="meta">2 Weeks | 60 Students | Beginner | 20 Lessons</div>
+          <div class="price">$75</div>
+          <div class="view-more">View More</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <h4>Course Category</h4>
+      <ul>
+        <li><label><input type="checkbox" /> Commercial <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Office <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Shop <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Education <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Academy <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Online Learning Home <span style="float:right">15</span></label></li>
+      </ul>
+
+      <h4>Instructors</h4>
+      <ul>
+        <li><label><input type="checkbox" /> Kenny White <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Dijho Doe <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Orpha <span style="float:right">15</span></label></li>
+      </ul>
+
+      <h4>Review</h4>
+      <ul>
+        <li><label><input type="checkbox" /> <span style="color: #f6c200;">★★★★★</span> <span style="color: #999;">(0.063)</span></label></li>
+        <li><label><input type="checkbox" /> <span style="color: #f6c200;">★★★★☆</span> <span style="color: #999;">(0.052)</span></label></li>
+        <li><label><input type="checkbox" /> <span style="color: #f6c200;">★★★☆☆</span> <span style="color: #999;">(0.051)</span></label></li>
+      </ul>
+
+      <h4>Level</h4>
+      <ul>
+        <li><label><input type="checkbox" /> All Levels <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Beginner <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Intermediate <span style="float:right">15</span></label></li>
+        <li><label><input type="checkbox" /> Expert <span style="float:right">15</span></label></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <div style="font-size: 20px; font-weight: bold;">
+          <span style="color: #ff6b00;">📖</span> eLearning <strong>CUTM</strong>
+        </div>
+        <p style="margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>GET HELP</h4>
+        <p><a href="#">Contact Us</a></p>
+        <p><a href="#">Latest Articles</a></p>
+        <p><a href="#">FAQ</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4>PROGRAMS</h4>
+        <p><a href="#">Art & Design</a></p>
+        <p><a href="#">Business</a></p>
+        <p><a href="#">IT & Software</a></p>
+        <p><a href="#">Languages</a></p>
+        <p><a href="#">Programming</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4>CONTACT US</h4>
+        <p>2321 New Design Str, Hudson Yards, USA</p>
+        <p>Tel: + (123) 2500-567-8988</p>
+        <p>Mail: supportlms@gmail.com</p>
+        <p></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright © 2024 LearnPress LMS | Powered by ThimPress
+    </div>
+  </footer>
+</body>
+</html>

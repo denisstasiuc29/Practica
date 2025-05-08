@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiere HTML</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #1a73e8;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .input {
+            margin: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .input input,
+        .input select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px;
+        }
+
+        .img img {
+            width: 25%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .optiuni {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        .footer {
+           position: fixed;
+           bottom: 0;
+           left: 0;
+           width: 100%;
+           height: 50px;
+           background-color: #1a73e8;
+    }
+
+        .footer-corner {
+           position: absolute;
+           color: black; 
+           font-weight: bold;
+           font-size: 14px;
+}
+
+        .footer-corner.top-left {
+           top: 5px;
+           left: 10px;
+}
+
+        .footer-corner.top-right {
+           top: 5px;
+           right: 10px;
+}
+
+       .footer-corner.bottom-left {
+           bottom: 5px;
+           left: 10px;
+        }
+
+        .footer-corner.bottom-right {
+            bottom: 5px;
+            right: 10px;
+        }
+
+        
+
+        .corner {
+    position: fixed;
+    font-weight: bold;
+    font-size: 14px;
+    color: black; 
+    z-index: 9999;
+}
+
+.top-left {
+    top: 5px;
+    left: 5px;
+}
+
+.top-right {
+    top: 5px;
+    right: 5px;
+}
+
+.bottom-left {
+    bottom: 5px;
+    left: 5px;
+}
+
+.bottom-right {
+    bottom: 5px;
+    right: 5px;
+}
+
+        .top-left { top: 60px; left: 10px; }
+        .top-right { top: 60px; right: 10px; }
+        .bottom-left { bottom: 10px; left: 10px; }
+        .bottom-right { bottom: 10px; right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="footer">
+        <div class="footer-corner top-left">Denis</div>
+        <div class="footer-corner top-right">Denis</div>
+        <div class="footer-corner bottom-left">Denis</div>
+        <div class="footer-corner bottom-right">Denis</div>
+    </div>
+    
+    <div class="navbar">Practica de inițiere RC-241</div>
+
+    <div class="input">
+        <input type="text" placeholder="Text">
+        <select>
+            <option value="1">Mediu</option>
+            <option value="2">Important</option>
+        </select>
+        <input type="date">
+    </div>
+
+    <div class="img">
+        <img src="https://photos.pandatur.md/78911727ff5fc1fead3323eb96932a05.jpg" alt="soroca">
+        <img src="https://tarabacuamintiri.ro/wp-content/uploads/2021/07/Soroca.jpg" alt="soroca2">
+        <img src="https://www.prospect.md/images/gallery/soroki-moldova-8461-1.jpg" alt="soroca3">
+    </div>
+
+    <div class="optiuni">
+        <div class="cerc">
+            <input type="radio" id="cerc-radio" name="raspuns"> 
+            <span>Varianta corectă</span>
+        </div>
+
+        <div class="square">
+            <input type="checkbox" id="checkbox">
+            <span>Răspuns corect</span>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+</body>
+</html>
