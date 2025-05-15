@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Închiriere Mașină</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://wieck-nissanao-production.s3.us-west-1.amazonaws.com/releaseInlineImages/b698405483fb602da7eb05f1eaee2d7d07f38c0b') no-repeat center center fixed;
+  background-size: cover;
+  color: #000;
+}
+
+
+    /* Dark mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .navbar {
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    body.dark-mode .sub-navbar {
+      background-color: #2a2a2a;
+      color: #fff;
+    }
+
+    body.dark-mode .rent-section {
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    body.dark-mode input,
+    body.dark-mode .insurance-options label {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    body.dark-mode .cars-list-container,
+    body.dark-mode .car-card {
+      background-color: #1e1e1e;
+      color: white;
+      border-color: #444;
+    }
+
+    body.dark-mode .navbar-right a {
+      background-color: #333;
+      color: #eee;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    body.dark-mode .navbar-right a:hover,
+    body.dark-mode .navbar-right a.active {
+      background-color: #555;
+    }
+
+    body.dark-mode .search-button.outlined-blue {
+      color: #90cdf4;
+      border-color: #90cdf4;
+    }
+
+    /* Navbar principal */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 30px;
+      background-color: #1a1a1a;
+      color: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .navbar-left {
+      font-size: 1.1em;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .navbar-right {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      padding-left: 0;
+    }
+
+    .navbar-right a {
+      background-color: #ffa500;
+      color: white;
+      padding: 10px 18px;
+      margin-left: 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+    }
+
+    .navbar-right a:hover {
+      background-color: #ff8c00;
+      box-shadow: 0 6px 12px rgba(255, 140, 0, 0.6);
+    }
+
+    .navbar-right a.active {
+      background-color: #ff8c00;
+      color: white;
+    }
+
+    /* Sub-navbar */
+    .sub-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      background-color: #f0f0f0;
+      color: #333;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 60px;
+    }
+
+    .sub-navbar .center {
+      flex: 1;
+      text-align: center;
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #222;
+    }
+
+    #themeToggle {
+      background: #007BFF;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    #themeToggle:hover {
+      background-color: #0056b3;
+    }
+
+    .rent-section.small {
+      position: relative;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1100;
+      max-width: 800px;
+      width: 90%;
+      background-color: white;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+      border-radius: 10px;
+      display: flex;
+      max-width: 900px; /* mai lat */
+  width: 95%;       /* puțin mai lat pe ecran */
+    }
+
+    .rent-left {
+      background-color: #007BFF;
+      color: white;
+      padding: 40px 30px;
+      position: relative;
+      width: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8em;
+      font-weight: bold;
+      text-align: left;
+      line-height: 1.3;
+    }
+     
+    .rent-left h2 {
+  font-size: 1.4em;  /* mai mic decât înainte */
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+
+    .car-overlay {
+      position: absolute;
+      background-image: url('https://images1.bonhams.com/image?src=Images/live/2023-03/27/25327802-1-26.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .rent-right {
+      padding: 30px 20px;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    input[type="text"] {
+      padding: 8px 10px;
+      font-size: 13px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 160px;
+    }
+
+    .insurance-options {
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
+    }
+
+    .search-button.outlined-blue {
+      border: 2px solid #007BFF;
+      color: #007BFF;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px 16px;
+      cursor: pointer;
+      width: fit-content;
+      margin-top: 10px;
+      font-size: 13px;
+      position: relative;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .search-button.outlined-blue:hover {
+      background-color: #e6f0ff;
+    }
+
+    .search-button.outlined-blue::before,
+    .search-button.outlined-blue::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border: 2px solid #007BFF;
+    }
+
+    .search-button.outlined-blue::before {
+      top: -2px;
+      left: -2px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .search-button.outlined-blue::after {
+      bottom: -2px;
+      right: -2px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .cars-list-container {
+  margin: 250px auto 40px;
+  max-width: 1100px; /* mărim containerul */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  padding: 30px 40px; /* mai mult padding */
+}
+
+    .cars-list-container h2 {
+      font-weight: bold;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* coloane mai late */
+  gap: 30px; /* mai mult spațiu între carduri */
+  justify-items: center;
+  background-color: #f9f9f9;
+}
+    .car-card {
+  width: 280px; /* card mai lat */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+    .car-card img {
+  width: 100%;
+  height: 180px; /* mai înaltă */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+    .car-card p {
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+   body.dark-mode .cars-list-container {
+  background-color: #1e1e1e;
+  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.1);
+  color: #eee;
+}
+
+body.dark-mode .car-grid {
+  background-color: #2a2a2a;
+  gap: 30px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar principal -->
+  <nav class="navbar">
+    <div class="navbar-left">RENTAUTTO</div>
+    <div class="navbar-right">
+      <a href="#" class="active">Acasă</a>
+      <a href="parc-auto.html">Parc Auto</a>
+      <a href="despre.html">Despre Noi</a>
+      <a href="termeni.html">Termeni și Condiții</a>
+    </div>
+  </nav>
+
+  <!-- Sub-navbar + buton dark mode -->
+  <div class="sub-navbar">
+    <div class="center">RENTAUTTO</div>
+    <button id="themeToggle">🌙</button>
+  </div>
+
+  <!-- Secțiunea Rent -->
+  <div class="rent-section small">
+    <div class="rent-left">
+      <h2>Selectează<br>Perioada De<br>Închiriere</h2>
+      <div class="car-overlay"></div>
+    </div>
+    <div class="rent-right">
+      <div class="form-row">
+        <input type="text" placeholder="15.05.2025" />
+        <input type="text" placeholder="16:16" />
+        <input type="text" placeholder="Data Returnării" />
+        <input type="text" placeholder="Ora Returnării" />
+      </div>
+      <div class="insurance-options">
+        Alege tipul de asigurare<br />
+        <label><input type="radio" name="insurance" checked /> Asigurare simplă RCA</label>
+        <label><input type="radio" name="insurance" /> Asigurare Casco</label>
+      </div>
+      <div class="form-row">
+        <input type="text" placeholder="Cod Reducere" />
+      </div>
+      <div class="search-button outlined-blue">VEZI REZULTATELE</div>
+    </div>
+  </div>
+
+  <!-- Parcul auto -->
+  <div class="cars-list-container">
+    <h2>Parcul Nostru Auto</h2>
+    <div class="car-grid">
+       <div class="car-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Dacia_Logan_2023_Front_2_%28cropped%29.jpg" alt="Dacia Logan" />
+    <p>Dacia Logan - 200 lei/zi</p>
+    </p>
+  </div>
+  <div class="car-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/2016_BMW_X5_xDrive40d_M_Sport_Automatic_3.0_Front.jpg" alt="BMW X5" />
+    <p>BMW X5 - 400 lei/zi
+    </p>
+  </div>
+  <div class="car-card">
+    <img src="https://www.automoli.com/common/vehicles/_assets/img/gallery/f106/audi-a4-b9-8w-facelift-2019.jpg" alt="Audi A4" />
+    <p>Audi A4 - 350 lei/zi</p>
+  </div>
+  <div class="car-card">
+    <img src="https://avatars.mds.yandex.net/get-verba/787013/2a000001609d717fcd037b415d00b0ee388c/456x342" alt="Toyota Corolla" />
+    <p>Toyota Corolla - 250 lei/zi</p>
+</div>
+  <div class="car-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Mercedes-Benz_W206_IMG_6380.jpg/960px-Mercedes-Benz_W206_IMG_6380.jpg" alt="Mercedes-Benz C-Class" />
+    <p>Mercedes-Benz C-Class - 300 lei/zi</p>
+  </div>
+  <div class="car-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI9Mihfh2rdUhRwj_FHQP4BCqgY-z6Ab_ePA&s" alt="Ford Focus" />
+    <p>Ford Focus - 220 lei/zi</p>
+  </div>
+  <div class="car-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg/1200px-Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg" alt="Honda Civic" />
+    <p>Honda Civic - 240 lei/zi</p>
+  </div>
+  <div class="car-card">
+    <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Camry/11344/1733916451269/front-left-side-47.jpg" alt="Toyota Camry" />
+    <p>Toyota Camry - 280 lei/zi</p>
+  </div>
+  <div class="car-card">
+    <img src="https://sun9-46.userapi.com/impg/zqst2gGLjhEI_VNJ0AK1ZZvIgc_Tno9dtybLKw/60zgPnKvBZw.jpg?size=604x340&quality=95&sign=dd8ae932eba64a96a1661ab44ad4360c&type=album" alt="VW Passat" />
+    <p>VW Passat - 260 lei/zi</p>
+  </div>
+  <div class="car-card">
+    <img src="https://dailylviv.com/assets/upload/llvv174.jpeg" alt="Lexus RX Series" />
+    <p>Lexus RX Series - 230 lei/zi</p>
+  </div>
+  <div class="car-card">
+    <img src="https://www.automoli.com/common/vehicles/_assets/img/gallery/f120/volkswagen-touareg-ii-7p-facelift-2014.jpg" alt="Volkswagen Touareg" />
+    <p>Volkswagen Touareg - 230 lei/zi</p>
+  </div>
+  <div class="car-card">
+    <img src="https://media.ed.edmunds-media.com/mercedes-benz/e-class/2025/oem/2025_mercedes-benz_e-class_sedan_amg-e-53-hybrid_fq_oem_1_1280.jpg" alt="Mercedes-Benz E-Class" />
+    <p>Mercedes-Benz E-Class - 300 lei/zi</p>
+  </div>
+    </div>
+  </div>
+
+  <!-- Script pentru dark mode -->
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>

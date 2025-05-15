@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagina Principală</title>
+  <style>
+    /* Stiluri comune */
+    :root {
+      --bg-color: #0d1b2a;
+      --navbar-bg: #1b263b;
+      --accent: #0077b6;
+      --text: #ffffff;
+      --input-bg: #415a77;
+      --input-border: #778da9;
+      --hover: #00b4d8;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1f1f1f, #2c3e50);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      flex-direction: column;
+      padding-top: 70px;
+      box-sizing: border-box;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--navbar-bg);
+      padding: 12px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+    }
+
+    .navbar-content {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .left a {
+      margin: 0 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar .left a:hover {
+      background-color: var(--hover);
+    }
+
+    .navbar .right {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    /* Form container */
+    .form-container {
+      background-color: var(--navbar-bg);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      width: 340px;
+      margin: 60px 20px;
+      animation: fadeIn 0.6s ease-out;
+      text-align: center;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: var(--hover);
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.03);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--navbar-bg);
+      color: var(--text);
+      width: 100%;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: auto;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+      font-size: 14px;
+    }
+
+    .footer p {
+      margin: 8px 0;
+    }
+
+    .footer .contact-info {
+      font-size: 16px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .navbar-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .form-container {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-content">
+      <div class="left">
+        <a href="acasa.html">My Project</a>
+      </div>
+      <div>
+        <a href="register.html">Register</a>
+        <a href="login.html">Log in</a>
+        <a href="logout.html">Log out</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="form-container">
+    <h2>Salut!</h2>
+    <p>Please choose one of the options below:</p>
+    <button onclick="location.href='../register/register.html'">Register</button>
+    <button onclick="location.href='../login/login.html'">Log in</button>
+    <button onclick="location.href='../logout/logout.html'">Log out</button>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 Inchirierea Automobilelor</p>
+    <div class="contact-info">
+      <p>Telefon: 062011064</p>
+      <p>Ne găsiți în Chișinău, Moldova</p>
+    </div>
+  </div>
+
+</body>
+</html>

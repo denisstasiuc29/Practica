@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parcul Nostru Auto</title>
+  <style>
+
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://wieck-nissanao-production.s3.us-west-1.amazonaws.com/releaseInlineImages/b698405483fb602da7eb05f1eaee2d7d07f38c0b') no-repeat center center fixed;
+  background-size: cover;
+  color: #000;
+} 
+
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --card-bg: white;
+      --navbar-bg: #1a1a1a;
+      --navbar-text: white;
+      --accent-color: #ffa500;
+      --accent-hover: #ff8c00;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --navbar-bg: #000;
+      --navbar-text: #f1f1f1;
+      --accent-color: #ff9800;
+      --accent-hover: #ff5722;
+      --shadow: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 30px;
+      background-color: var(--navbar-bg);
+      color: var(--navbar-text);
+      box-shadow: 0 4px 6px var(--shadow);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+    }
+
+    .navbar-left {
+      font-size: 1.1em;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .navbar-right {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+
+    .navbar-right a {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .navbar-right a:hover {
+      background-color: var(--accent-hover);
+      box-shadow: 0 6px 12px rgba(255, 140, 0, 0.6);
+    }
+
+    .dark-toggle {
+      margin-left: auto;
+      margin-right: 0;
+      background-color: transparent;
+      border: 2px solid var(--accent-color);
+      color: var(--accent-color);
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dark-toggle:hover {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    h2 {
+      margin-top: 90px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      padding: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .car-card {
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .car-card:hover {
+      transform: scale(1.05);
+    }
+
+    .car-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-card p {
+      margin: 12px;
+      font-weight: bold;
+      color: var(--text-color);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">Inchirieri Auto</div>
+    <div class="navbar-right">
+      <a href="rent.html">Acasă</a>
+      <a href="parc-auto.html">Parc Auto</a>
+      <a href="termeni.html">Termeni și Condiții</a>
+      <a href="despre.html">Despre Noi</a>
+    </div>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙/☀️</button>
+  </nav>
+
+  <h2>Parcul Nostru Auto</h2>
+  <div class="car-grid">
+    <div class="car-card"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Dacia_Logan_2023_Front_2_%28cropped%29.jpg" alt="Dacia Logan"><p>Dacia Logan - 200 lei/zi</p></div>
+    <div class="car-card"><img src="https://hips.hearstapps.com/hmg-prod/images/p90495464-1677001974.jpg" alt="BMW X5"><p>BMW X5 - 400 lei/zi</p></div>
+    <div class="car-card"><img src="https://www.automoli.com/common/vehicles/_assets/img/gallery/f106/audi-a4-b9-8w-facelift-2019.jpg" alt="Audi A4"><p>Audi A4 - 350 lei/zi</p></div>
+    <div class="car-card"><img src="https://crazyrent.md/wp-content/uploads/notice/f5482/46fcd1973f7d570358400ae231e26254.jpg" alt="Mercedes E-Class"><p>Mercedes E-Class - 420 lei/zi</p></div>
+    <div class="car-card"><img src="https://www.topgear.com/sites/default/files/cars-car/image/2019/02/2018_ford_focus_st-line_red_11.jpg" alt="Ford Focus"><p>Ford Focus - 250 lei/zi</p></div>
+    <div class="car-card"><img src="https://d8a6a33f-3369-444b-9b5f-793c13ff0708.selcdn.net/media/common/just_strip/tradeins.space/uploads/models_gallery_image/13778/450d7266a8acac506ddc97c36c79cedee2addd42.jpeg" alt="Toyota Corolla"><p>Toyota Corolla - 270 lei/zi</p></div>
+    <div class="car-card"><img src="https://hips.hearstapps.com/hmg-prod/images/2025-toyota-camry-xse-awd-123-66993cc94cc40.jpg" alt="Toyota Camry"><p>Toyota Camry - 300 lei/zi</p></div>
+    <div class="car-card"><img src="https://www.topgear.com/sites/default/files/2021/11/Mercedes_C300D_0000.jpg" alt="Mercedes C-Class"><p>Mercedes C-Class - 380 lei/zi</p></div>
+    <div class="car-card"><img src="https://live.staticflickr.com/65535/51416502005_709f62ecd0_b.jpg" alt="VW Passat"><p>VW Passat - 320 lei/zi</p></div>
+    <div class="car-card"><img src="https://atl.images.passionperformance.ca/content/photos/53/59/535937-honda-civic-2016-2021-quoi-savoir-avant-d-acheter.jpeg" alt="Honda Civic"><p>Honda Civic - 290 lei/zi</p></div>
+  </div>
+
+  <script>
+    // Dark mode toggle
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
+    }
+
+    // Load saved preference
+    window.onload = () => {
+      if (localStorage.getItem("dark-mode") === "true") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
+</body>
+</html>

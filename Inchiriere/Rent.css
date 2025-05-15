@@ -1,0 +1,334 @@
+/* Font & bază */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  color: white;
+  padding: 15px 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbar-left .logo {
+  font-size: 24px;
+}
+
+.navbar-left .brand {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* Center: Navigation Links */
+.navbar-center {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-center li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.navbar-center li a:hover {
+  color: #facc15;
+}
+
+/* Dropdown */
+.navbar-center .dropdown {
+  position: relative;
+}
+
+.navbar-center .dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #1f2937;
+  list-style: none;
+  padding: 10px 0;
+  display: none;
+  min-width: 120px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar-center .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-center .dropdown-menu li a {
+  display: block;
+  padding: 8px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-center .dropdown-menu li a:hover {
+  background-color: #374151;
+}
+
+/* Right: Phone + Languages */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-right .phone {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.navbar-right .languages {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.navbar-right .languages span {
+  padding: 3px 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.navbar-right .languages .selected {
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+/* Buton activ navbar */
+.navbar-right .nav-btn.active {
+  color: #facc15;
+  font-weight: bold;
+  border-bottom: 2px solid #facc15;
+}
+
+
+
+/* Formular închiriere mașină */
+.container {
+  max-width: 450px;
+  margin: 60px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+  font-size: 26px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+button {
+  background-color: #3b82f6;
+  color: white;
+  margin-top: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #16a34a;
+}
+
+/* Secțiunea: Perioada de închiriere */
+.rent-period-container {
+  width: 1140px;
+  height: 286px;
+  display: flex;
+  background: white;
+  margin: 60px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.rent-period-left {
+  width: 35%;
+  background: linear-gradient(to bottom right, #2563eb, #1e40af); /* albastru */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 20px;
+  text-align: center;
+}
+
+.rent-period-right {
+  width: 65%;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.form-row input[type="text"],
+.form-row input[type="date"],
+.form-row input[type="time"] {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.insurance-options {
+  font-size: 15px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+.insurance-options label {
+  margin-right: 20px;
+  display: inline;
+}
+
+/* Secțiunea Parc Auto */
+.car-gallery {
+  max-width: 1140px;
+  margin: 60px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+.car-gallery h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.car-card {
+  text-align: center;
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+}
+
+.car-card img {
+  width: 100%;
+  height: 180px; /* înălțime fixă pentru consistență */
+  border-radius: 8px;
+  object-fit: cover; /* menține proporțiile fără distorsiuni */
+}
+
+.car-card p {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Media Queries pentru responsivitate suplimentară */
+@media (max-width: 768px) {
+  .car-gallery {
+    padding: 15px;
+  }
+
+  .car-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .car-card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-card img {
+    height: 140px;
+  }
+
+  .car-card {
+    padding: 15px;
+  }
+}

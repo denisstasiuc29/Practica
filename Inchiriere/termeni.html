@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Termeni și Condiții - CarsRent.md</title>
+  <style>
+    :root {
+      --bg: #f8f8f8;
+      --text: #333;
+      --nav-bg: #1a1a1a;
+      --card-bg: #fff;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --highlight: #ffa500;
+      --highlight-hover: #ff8c00;
+      --subnav-bg: #f3f3f3;
+      --subnav-border: #ddd;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #ddd;
+      --nav-bg: #000;
+      --card-bg: #1f1f1f;
+      --shadow: rgba(255, 255, 255, 0.1);
+      --highlight: #ff9800;
+      --highlight-hover: #ff6f00;
+      --subnav-bg: #1a1a1a;
+      --subnav-border: #333;
+    }
+
+    /* Smooth transitions */
+    * {
+      box-sizing: border-box;
+      transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 30px;
+      background-color: var(--nav-bg);
+      color: white;
+      box-shadow: 0 4px 6px var(--shadow);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .navbar-left {
+      font-size: 1.1em;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .navbar-right {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      padding-left: 0;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar-right a {
+      background-color: var(--highlight);
+      color: white;
+      padding: 10px 18px;
+      margin-left: 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+    }
+
+    .navbar-right a:hover {
+      background-color: var(--highlight-hover);
+      box-shadow: 0 6px 12px rgba(255, 140, 0, 0.6);
+    }
+
+    .navbar-right a.active {
+      background-color: var(--highlight-hover);
+      color: white;
+    }
+
+    /* Buton schimbare temă */
+    #theme-toggle {
+      cursor: pointer;
+      background: var(--highlight);
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      margin-left: 12px;
+    }
+    #theme-toggle:hover {
+      background-color: var(--highlight-hover);
+      box-shadow: 0 6px 12px rgba(255, 140, 0, 0.6);
+    }
+
+    /* Sub-navbar */
+    .sub-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px;
+      background-color: var(--subnav-bg);
+      border-bottom: 1px solid var(--subnav-border);
+      font-family: Arial, sans-serif;
+      margin-top: 60px; /* pentru navbar fix */
+      color: var(--text);
+    }
+
+    .sub-navbar .center {
+      flex: 1;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    .sub-navbar .right {
+      text-align: right;
+      font-size: 0.9em;
+      color: #666;
+      line-height: 1.2;
+    }
+
+    .sub-navbar .right div:first-child {
+      margin-bottom: 1mm;
+    }
+
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px var(--shadow);
+      animation: fadeIn 0.8s ease-in-out;
+      color: var(--text);
+    }
+
+    h1, h2 {
+      color: var(--text);
+    }
+
+    p, li {
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .section-divider {
+      margin: 30px 0 15px;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: var(--text);
+      opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        justify-content: center;
+      }
+      .navbar-left {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .navbar-right {
+        position: static;
+        transform: none;
+        justify-content: center;
+      }
+      .sub-navbar {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar fix -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-left">RENTAUTTO</div>
+     <div class="navbar-right">
+      <a href="rent.html">Acasă</a>
+      <a href="parc-auto.html">Parc Auto</a>
+      <a href="termeni.html" class="active" aria-current="page">Termeni și Condiții</a>
+      <a href="despre.html">Despre Noi</a>
+      <button id="theme-toggle" aria-label="Schimbă tema">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <!-- Sub-navbar -->
+  <div class="sub-navbar">
+    <div class="center">RENTAUTTO</div>
+  </div>
+
+  <!-- Conținut principal -->
+  <main class="container">
+    <h1>Termeni și Condiții</h1>
+    <p><strong>Condițiile de închiriere CarsRent.md</strong></p>
+    <p>✨ La RENTAUTTO.md ne dorim ca închirierea unei mașini să fie o experiență clară, rapidă și fără griji. Mai jos găsești toate condițiile – explicate simplu, fără clauze ascunse. Dacă ai vreo întrebare, echipa noastră este aici pentru tine.</p>
+
+    <div class="section-divider">📄 Termeni utilizați</div>
+    <ul>
+      <li><strong>Locator</strong> – compania care oferă automobilul spre închiriere (RENTAUTTO.md)</li>
+      <li><strong>Locatar</strong> – persoana care închiriază automobilul</li>
+      <li><strong>Contract de locațiune</strong> – documentul semnat între părți</li>
+      <li><strong>Garanție (depozit)</strong> – sumă blocată temporar pe durata închirierii, returnabilă la final</li>
+    </ul>
+
+    <div class="section-divider">📅 Ce acte ai nevoie pentru a închiria un automobil?</div>
+    <ul>
+      <li>🔹 Buletin de identitate sau pașaport – nu este obligatoriu să fie emis în Republica Moldova</li>
+      <li>🔹 Permis de conducere valabil</li>
+    </ul>
+    <p>⚠️ Fără limită fixă de vârstă – discutăm individual, în funcție de client</p>
+    <p>⚠️ Vechimea permisului – flexibilă, în funcție de experiență și mașina aleasă</p>
+    <p>🚗 Suntem flexibili și găsim soluții potrivite pentru fiecare client!</p>
+
+    <div class="section-divider">🚗 Ce este garanția?</div>
+    <p>Garanția este o sumă de bani care se achită la semnarea contractului și se restituie imediat la returnarea mașinii, dacă:</p>
+    <ul>
+      <li>nu există daune,</li>
+      <li>nu au fost încălcări contractuale,</li>
+      <li>nu există contravenții sau lipsuri.</li>
+    </ul>
+
+    <div class="section-divider">🚑 Ce se întâmplă în caz de accident?</div>
+    <ul>
+      <li>Sună imediat la 112.</li>
+      <li>Nu părăsi locul accidentului.</li>
+      <li>Informează imediat managerul RENTAUTTO.md.</li>
+    </ul>
+    <p>Dacă accidentul a fost provocat de alt participant, iar daunele sunt acoperite de RCA-ul acestuia, garanția ta nu este afectată, atâta timp cât respecți contractul.</p>
+
+    <div class="section-divider">🔒 Obligațiile clientului (Locatarului)</div>
+    <ul>
+      <li>să conducă legal și responsabil, fără să depășească viteza de 130 km/h;</li>
+      <li>să nu folosească mașina ca taxi, pentru cursuri auto, curse sau competiții;</li>
+      <li>să nu iasă cu mașina din R. Moldova fără acord scris;</li>
+      <li>să nu transmită altcuiva mașina fără acordul nostru;</li>
+      <li>să restituie mașina curată, în starea în care a fost primită (cu uzură normală);</li>
+      <li>să aibă grijă de automobil ca de propriul bun.</li>
+    </ul>
+
+    <p>🛍️ Intenționezi să călătorești în afara Republicii Moldova?</p>
+    <p>Oferim posibilitatea de a utiliza autoturismul în afara țării, în baza unei oferte personalizate. Vă rugăm să ne contactați în prealabil pentru a obține toate detaliile necesare.</p>
+
+    <p>📆 Mașina se transmite și se restituie în baza unui proces-verbal (act de predare-primire), semnat de ambele părți.</p>
+
+    <div class="section-divider">🚫 Cazuri în care putem refuza închirierea</div>
+    <p>Ne rezervăm dreptul de a nu oferi un automobil unei persoane, fără a oferi explicații, dacă avem motive întemeiate (ex: comportament agresiv, suspiciuni rezonabile etc.).</p>
+  </main>
+
+  <script>
+    // Verifică tema salvată anterior
+    const body = document.body;
+    const toggleBtn = document.getElementById('theme-toggle');
+
+    function setTheme(isDark) {
+      if (isDark) {
+        body.classList.add('dark');
+        toggleBtn.textContent = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove('dark');
+        toggleBtn.textContent = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // La încărcare
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setTheme(true);
+    } else {
+      setTheme(false);
+    }
+
+    // Toggle la click
+    toggleBtn.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark');
+      setTheme(!isDark);
+    });
+  </script>
+
+</body>
+</html>

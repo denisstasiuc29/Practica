@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoodRent Moldova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .background {
+      background: url('background.jpg') no-repeat center center/cover;
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 100px);
+      padding: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      color: white;
+    }
+
+    .form-container h1 {
+      color: orange;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .choose-btn {
+      background-color: orange;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .choose-btn:hover {
+      background-color: darkorange;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="GoodRent Logo">
+      <strong>GOODRENT</strong>
+    </div>
+    <nav>
+      <a href="#about">ABOUT US</a>
+      <a href="#cars">CARS</a>
+      <a href="#services">SERVICES</a>
+      <a href="#conditions">CONDITIONS</a>
+      <a href="#contacts">CONTACTS</a>
+    </nav>
+  </header>
+
+  <div class="main">
+    <div class="form-container">
+      <h1>CAR RENTAL IN MOLDOVA</h1>
+      <p>MEETING AT THE AIRPORT AND OTHER SERVICES</p>
+      <div class="form-group">
+        <input type="text" placeholder="Pick-Up location">
+      </div>
+      <div class="form-group">
+        <input type="date">
+        <input type="time">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Drop-Off location">
+      </div>
+      <div class="form-group">
+        <input type="date">
+        <input type="time">
+      </div>
+      <div class="form-group">
+        <input type="number" placeholder="Age">
+      </div>
+      <button class="choose-btn">CHOOSE CAR</button>
+    </div>
+  </div>
+</body>
+</html>

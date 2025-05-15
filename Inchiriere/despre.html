@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Despre Noi - CarsRent.md</title>
+  <style>
+    :root {
+      --bg: #f8f8f8;
+      --text: #333;
+      --nav-bg: #1a1a1a;
+      --card-bg: #fff;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --highlight: #ffa500;
+      --highlight-hover: #ff8c00;
+      --subnav-bg: #f0f0f0;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --nav-bg: #000;
+      --card-bg: #1f1f1f;
+      --shadow: rgba(255, 255, 255, 0.08);
+      --highlight: #ff9800;
+      --highlight-hover: #ff6f00;
+      --subnav-bg: #1a1a1a;
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 30px;
+      background-color: var(--nav-bg);
+      color: white;
+      box-shadow: 0 4px 6px var(--shadow);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .navbar-left {
+      font-size: 1.1em;
+      font-weight: bold;
+      flex: 1;
+    }
+
+    .navbar-center {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex: 2;
+      flex-wrap: wrap;
+    }
+
+    .navbar-center a,
+    #theme-toggle {
+      background-color: var(--highlight);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .navbar-center a:hover,
+    .navbar-center a.active,
+    #theme-toggle:hover {
+      background-color: var(--highlight-hover);
+      box-shadow: 0 6px 12px rgba(255, 140, 0, 0.6);
+    }
+
+    .sub-navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 30px;
+      background-color: var(--subnav-bg);
+      color: var(--text);
+      box-shadow: 0 2px 4px var(--shadow);
+      margin-top: 60px;
+      font-size: 1.7em;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px var(--shadow);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-divider {
+      margin: 30px 0 15px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  background-color: var(--nav-bg);
+  color: white;
+  box-shadow: 0 4px 6px var(--shadow);
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* centrăm tot conținutul */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-center {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+      .sub-navbar {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.5em;
+        gap: 8px;
+      }
+
+      .container {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar"> 
+  <div class="navbar-center">
+    <a href="rent.html">Acasă</a>
+    <a href="parc-auto.html">Parc Auto</a>
+    <a href="termeni.html">Termeni și Condiții</a>
+    <a href="despre.html" class="active">Despre Noi</a>
+    <button id="theme-toggle" aria-label="Schimbă tema">🌙 Dark Mode</button>
+  </div>
+</nav>
+
+
+  <!-- Sub-navbar -->
+  <div class="sub-navbar">RENTAUTTO</div>
+
+  <!-- Conținut -->
+  <div class="container">
+    <h1>Despre Noi</h1>
+    <p><strong>RENTAUTTO.MD</strong> este o agenție de Închirieri Auto în R.Moldova, care are drept scop prestarea serviciilor de nișă, cu o experiență de primă clasă.</p>
+
+    <div class="section-divider">Viziunea companiei</div>
+    <p>Viziunea noastră este de a deveni cel mai important operator în domeniul Închirieri Auto din Republica Moldova, prin dezvoltarea continuă de noi relații și oportunități, și întotdeauna oferind servicii de înaltă calitate.</p>
+
+    <div class="section-divider">Valorile companiei</div>
+    <p><strong>Respect:</strong> Colaborăm împreună cu partenerii și furnizorii noștri cu respect și integritate pentru a dezvolta și menține relații de muncă de lungă durată și reciproc avantajoase.</p>
+
+    <p><strong>Pasiunea:</strong> Suntem pasionați de afacerea noastră. Avem grijă de clienții noștri prin calitatea serviciilor noastre; promovăm ideile și soluțiile creative și inovatoare.</p>
+
+    <p><strong>Excelență:</strong> Ne-am angajat să fim o organizație de înaltă performanță, focusată pe satisfacția totală a clientului. Analizăm continuu procesele noastre și pe noi înșine pentru a deveni cei mai buni dintre cei mai buni.</p>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+      toggleBtn.textContent = '☀️ Light Mode';
+    } else {
+      toggleBtn.textContent = '🌙 Dark Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if (body.classList.contains('dark')) {
+        body.classList.remove('dark');
+        toggleBtn.textContent = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.add('dark');
+        toggleBtn.textContent = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
