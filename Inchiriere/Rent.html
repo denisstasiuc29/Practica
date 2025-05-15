@@ -83,7 +83,7 @@
       z-index: 1000;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
     }
 
     .navbar-left {
@@ -99,7 +99,29 @@
       display: flex;
       gap: 12px;
       padding-left: 0;
+      margin-left: auto;
     }
+
+    .navbar-login {
+  margin-left: auto;
+}
+
+.navbar-login a {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-login a:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 12px rgba(0, 86, 179, 0.6);
+}
 
     .navbar-right a {
       background-color: #ffa500;
@@ -337,6 +359,27 @@ body.dark-mode .car-grid {
   gap: 30px;
 }
 
+input[type="date"],
+input[type="time"] {
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 160px;
+  background-color: white;
+  color: #000;
+  font-family: inherit;
+}
+
+/* Dark mode styling pentru inputuri date & time */
+body.dark-mode input[type="date"],
+body.dark-mode input[type="time"] {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+
   </style>
 </head>
 <body>
@@ -344,11 +387,15 @@ body.dark-mode .car-grid {
   <nav class="navbar">
     <div class="navbar-left">RENTAUTTO</div>
     <div class="navbar-right">
-      <a href="#" class="active">Acasă</a>
-      <a href="parc-auto.html">Parc Auto</a>
-      <a href="despre.html">Despre Noi</a>
-      <a href="termeni.html">Termeni și Condiții</a>
-    </div>
+  <a href="#" class="active">Acasă</a>
+  <a href="parc-auto.html">Parc Auto</a>
+  <a href="despre.html">Despre Noi</a>
+  <a href="termeni.html">Termeni și Condiții</a>
+</div>
+<div class="navbar-login">
+  <a href="loggin.html">Logare</a>
+</div>
+
   </nav>
 
   <!-- Sub-navbar + buton dark mode -->
@@ -365,11 +412,13 @@ body.dark-mode .car-grid {
     </div>
     <div class="rent-right">
       <div class="form-row">
-        <input type="text" placeholder="15.05.2025" />
-        <input type="text" placeholder="16:16" />
-        <input type="text" placeholder="Data Returnării" />
-        <input type="text" placeholder="Ora Returnării" />
-      </div>
+  <input type="date" placeholder="15.05.2025" />
+  <input type="time" placeholder="16:16" />
+  <input type="date" placeholder="Data Returnării" />
+  <input type="time" placeholder="Ora Returnării" />
+</div>
+
+
       <div class="insurance-options">
         Alege tipul de asigurare<br />
         <label><input type="radio" name="insurance" checked /> Asigurare simplă RCA</label>

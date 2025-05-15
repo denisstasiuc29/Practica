@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log in</title>
+  <title>Înregistrare</title>
   <style>
     :root {
       --bg-color: #0d1b2a;
@@ -167,22 +167,22 @@
   <div class="navbar">
     <div class="navbar-content">
       <div class="left">
-        <a href="../register/register.html">Register</a>
-        <a href="../login/login.html">Log in</a>
-        <a href="../logout/logout.html">Log out</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Log in</a>
+        <a href="logout.html">Log out</a>
       </div>
       <div class="right"></div>
-      <a href="home.html">My Project</a>
+      <a href="loggin.html">My Project</a>
     </div>
   </div>
 
-  <!-- Login Form -->
+  <!-- Register Form -->
   <div class="form-container">
-    <h2>Log in</h2>
-    <form action="/login" method="POST">
-      <input type="text" id="username" name="username" placeholder="Introdu numele de utilizator" required>
-      <input type="password" id="password" name="password" placeholder="Introdu parola" required>
-      <button type="submit">Log in</button>
+    <h2>Înregistrare</h2>
+    <form action="/register" method="POST">
+      <input type="text" name="username" placeholder="Nume utilizator" required>
+      <input type="password" name="password" placeholder="Parolă" required>
+      <button type="submit">Înregistrează-te</button>
     </form>
   </div>
 

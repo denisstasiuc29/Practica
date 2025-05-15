@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log out</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagina Principală</title>
   <style>
+    /* Stiluri comune */
     :root {
       --bg-color: #0d1b2a;
       --navbar-bg: #1b263b;
@@ -17,14 +18,14 @@
 
     body {
       margin: 0;
-      padding-top: 70px;
-      background-color: var(--bg-color);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text);
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
       min-height: 100vh;
+      background: linear-gradient(135deg, #1f1f1f, #2c3e50);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      flex-direction: column;
+      padding-top: 70px;
       box-sizing: border-box;
     }
 
@@ -89,6 +90,24 @@
       font-size: 16px;
     }
 
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: var(--hover);
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.03);
+    }
+
     /* Footer */
     .footer {
       background-color: var(--navbar-bg);
@@ -103,6 +122,10 @@
 
     .footer p {
       margin: 8px 0;
+    }
+
+    .footer .contact-info {
+      font-size: 16px;
     }
 
     /* Animations */
@@ -131,25 +154,32 @@
   <div class="navbar">
     <div class="navbar-content">
       <div class="left">
-        <a href="../register/register.html">Register</a>
-        <a href="../login/login.html">Log in</a>
-        <a href="../logout/logout.html">Log out</a>
+        <a href="Rent.html">My Project</a>
       </div>
-      <div class="right"></div>
-      <a href="home.html">My Project</a>
+      <div>
+        <a href="register.html">Register</a>
+        <a href="login.html">Log in</a>
+        <a href="logout.html">Log out</a>
+      </div>
     </div>
   </div>
 
-  <!-- Log out Confirmation -->
+  <!-- Content -->
   <div class="form-container">
-    <h2>Ați fost delogat cu succes!</h2>
-    <p>Vă mulțumim că ați utilizat serviciile noastre.</p>
+    <h2>Salut!</h2>
+    <p>Please choose one of the options below:</p>
+    <button onclick="location.href='register.html'">Register</button>
+    <button onclick="location.href='login.html'">Log in</button>
+    <button onclick="location.href='logout.html'">Log out</button>
   </div>
 
   <!-- Footer -->
   <div class="footer">
     <p>&copy; 2025 Inchirierea Automobilelor</p>
-    <p>Telefon: 062011064 | Chișinău, str. Testului 123</p>
+    <div class="contact-info">
+      <p>Telefon: 062011064</p>
+      <p>Ne găsiți în Chișinău, Moldova</p>
+    </div>
   </div>
 
 </body>

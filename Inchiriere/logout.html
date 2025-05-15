@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Înregistrare</title>
+  <title>Log out</title>
   <style>
     :root {
       --bg-color: #0d1b2a;
@@ -84,45 +84,9 @@
       margin-bottom: 20px;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      background-color: var(--input-bg);
-      border: 1px solid var(--input-border);
-      border-radius: 8px;
-      padding: 12px;
-      margin-bottom: 15px;
-      font-size: 15px;
+    p {
       color: var(--text);
-    }
-
-    input:focus {
-      outline: none;
-      border-color: var(--hover);
-    }
-
-    input::placeholder {
-      color: #cbd5e1;
-    }
-
-    button {
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 12px;
       font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    button:hover {
-      background-color: var(--hover);
-      transform: scale(1.03);
     }
 
     /* Footer */
@@ -167,32 +131,26 @@
   <div class="navbar">
     <div class="navbar-content">
       <div class="left">
-        <a href="../register/register.html">Register</a>
-        <a href="../login/login.html">Log in</a>
-        <a href="../logout/logout.html">Log out</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Log in</a>
+        <a href="logout.html">Log out</a>
       </div>
       <div class="right"></div>
-      <a href="home.html">My Project</a>
+      <a href="loggin.html">My Project</a>
     </div>
   </div>
 
-  <!-- Register Form -->
+  <!-- Log out Confirmation -->
   <div class="form-container">
-    <h2>Înregistrare</h2>
-    <form action="/register" method="POST">
-      <input type="text" name="username" placeholder="Nume utilizator" required>
-      <input type="password" name="password" placeholder="Parolă" required>
-      <button type="submit">Înregistrează-te</button>
-    </form>
+    <h2>Ați fost delogat cu succes!</h2>
+    <p>Vă mulțumim că ați utilizat serviciile noastre.</p>
   </div>
 
   <!-- Footer -->
   <div class="footer">
     <p>&copy; 2025 Inchirierea Automobilelor</p>
-    <p>Telefon: 062011064</p>
-    <p>Ne găsiți în Chișinău, Moldova</p>
+    <p>Telefon: 062011064 | Chișinău, str. Testului 123</p>
   </div>
 
 </body>
 </html>
-

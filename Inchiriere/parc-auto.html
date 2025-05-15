@@ -5,15 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Parcul Nostru Auto</title>
   <style>
-
-    body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('https://wieck-nissanao-production.s3.us-west-1.amazonaws.com/releaseInlineImages/b698405483fb602da7eb05f1eaee2d7d07f38c0b') no-repeat center center fixed;
-  background-size: cover;
-  color: #000;
-} 
-
     :root {
       --bg-color: #f4f4f4;
       --text-color: #333;
@@ -44,7 +35,6 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
     }
@@ -61,13 +51,11 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      position: relative;
     }
 
     .navbar-left {
       font-size: 1.1em;
       font-weight: bold;
-      flex-shrink: 0;
     }
 
     .navbar-right {
@@ -87,17 +75,14 @@
       font-weight: 600;
       font-size: 14px;
       box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .navbar-right a:hover {
       background-color: var(--accent-hover);
-      box-shadow: 0 6px 12px rgba(255, 140, 0, 0.6);
     }
 
     .dark-toggle {
       margin-left: auto;
-      margin-right: 0;
       background-color: transparent;
       border: 2px solid var(--accent-color);
       color: var(--accent-color);
@@ -105,7 +90,6 @@
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
     .dark-toggle:hover {
@@ -115,32 +99,79 @@
 
     h2 {
       margin-top: 90px;
-      margin-bottom: 20px;
       text-align: center;
-      font-size: 28px;
+    }
+
+    .main-content {
+      display: flex;
+      gap: 30px;
+      padding: 30px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .filter-sidebar {
+      width: 250px;
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px var(--shadow);
+      height: fit-content;
+    }
+
+    .filter-sidebar h3 {
+      margin-top: 0;
+    }
+
+    .filter-group {
+      margin-bottom: 20px;
+    }
+
+    .filter-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .filter-group select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+    }
+
+    .apply-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .apply-btn:hover {
+      background-color: var(--accent-hover);
     }
 
     .car-grid {
+      flex: 1;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      justify-content: center;
-      padding: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
     }
 
     .car-card {
       background-color: var(--card-bg);
-      border-radius: 15px;
-      box-shadow: 0 4px 8px var(--shadow);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px var(--shadow);
       text-align: center;
       transition: transform 0.3s ease;
-      overflow: hidden;
     }
 
     .car-card:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     .car-card img {
@@ -150,9 +181,8 @@
     }
 
     .car-card p {
-      margin: 12px;
+      padding: 12px;
       font-weight: bold;
-      color: var(--text-color);
     }
   </style>
 </head>
@@ -160,41 +190,129 @@
   <nav class="navbar">
     <div class="navbar-left">Inchirieri Auto</div>
     <div class="navbar-right">
-      <a href="rent.html">Acasă</a>
+      <a href="Rent.html">Acasă</a>
       <a href="parc-auto.html">Parc Auto</a>
-      <a href="termeni.html">Termeni și Condiții</a>
-      <a href="despre.html">Despre Noi</a>
+      <a href="termeni.html">Termeni</a>
+      <a href="despre.html">Despre</a>
     </div>
     <button class="dark-toggle" onclick="toggleDarkMode()">🌙/☀️</button>
   </nav>
 
   <h2>Parcul Nostru Auto</h2>
-  <div class="car-grid">
-    <div class="car-card"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Dacia_Logan_2023_Front_2_%28cropped%29.jpg" alt="Dacia Logan"><p>Dacia Logan - 200 lei/zi</p></div>
-    <div class="car-card"><img src="https://hips.hearstapps.com/hmg-prod/images/p90495464-1677001974.jpg" alt="BMW X5"><p>BMW X5 - 400 lei/zi</p></div>
-    <div class="car-card"><img src="https://www.automoli.com/common/vehicles/_assets/img/gallery/f106/audi-a4-b9-8w-facelift-2019.jpg" alt="Audi A4"><p>Audi A4 - 350 lei/zi</p></div>
-    <div class="car-card"><img src="https://crazyrent.md/wp-content/uploads/notice/f5482/46fcd1973f7d570358400ae231e26254.jpg" alt="Mercedes E-Class"><p>Mercedes E-Class - 420 lei/zi</p></div>
-    <div class="car-card"><img src="https://www.topgear.com/sites/default/files/cars-car/image/2019/02/2018_ford_focus_st-line_red_11.jpg" alt="Ford Focus"><p>Ford Focus - 250 lei/zi</p></div>
-    <div class="car-card"><img src="https://d8a6a33f-3369-444b-9b5f-793c13ff0708.selcdn.net/media/common/just_strip/tradeins.space/uploads/models_gallery_image/13778/450d7266a8acac506ddc97c36c79cedee2addd42.jpeg" alt="Toyota Corolla"><p>Toyota Corolla - 270 lei/zi</p></div>
-    <div class="car-card"><img src="https://hips.hearstapps.com/hmg-prod/images/2025-toyota-camry-xse-awd-123-66993cc94cc40.jpg" alt="Toyota Camry"><p>Toyota Camry - 300 lei/zi</p></div>
-    <div class="car-card"><img src="https://www.topgear.com/sites/default/files/2021/11/Mercedes_C300D_0000.jpg" alt="Mercedes C-Class"><p>Mercedes C-Class - 380 lei/zi</p></div>
-    <div class="car-card"><img src="https://live.staticflickr.com/65535/51416502005_709f62ecd0_b.jpg" alt="VW Passat"><p>VW Passat - 320 lei/zi</p></div>
-    <div class="car-card"><img src="https://atl.images.passionperformance.ca/content/photos/53/59/535937-honda-civic-2016-2021-quoi-savoir-avant-d-acheter.jpeg" alt="Honda Civic"><p>Honda Civic - 290 lei/zi</p></div>
+  <div class="main-content">
+    <!-- Sidebar -->
+    <aside class="filter-sidebar">
+      <h3>Filtrare</h3>
+      <div class="filter-group">
+        <label for="brand">Marcă</label>
+        <select id="brand">
+          <option value="">Toate</option>
+          <option value="audi">Audi</option>
+          <option value="bmw">BMW</option>
+          <option value="toyota">Toyota</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="ford">Ford</option>
+          <option value="dacia">Dacia</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="year">An fabricație</label>
+        <select id="year">
+          <option value="">Toți anii</option>
+          <!-- opțiuni scurte pentru demo -->
+          <option value="2025">2025</option>
+          <option value="2023">2023</option>
+          <option value="2020">2020</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2017">2017</option>
+          <option value="2013">2013</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="price">Preț/zi</label>
+        <select id="price">
+          <option value="">Toate</option>
+          <option value="0-250">Sub 250 lei</option>
+          <option value="251-350">251–350 lei</option>
+          <option value="351-500">351–500 lei</option>
+        </select>
+      </div>
+      <button class="apply-btn" onclick="applyFilters()">Aplică filtre</button>
+    </aside>
+
+    <!-- Car grid -->
+    <div class="car-grid" id="carGrid">
+      <div class="car-card" data-brand="audi" data-year="2025" data-price="400">
+        <img src="https://www.automoli.com/common/vehicles/_assets/img/gallery/f106/audi-a4-b9-8w-facelift-2019.jpg">
+        <p>Audi A4 - 400 lei/zi</p>
+      </div>
+      <div class="car-card" data-brand="dacia" data-year="2017" data-price="250">
+        <img src="https://th.bing.com/th/id/OIP.Ed2akE9NOJ_Uo7TDcya1bAHaE7?rs=1&pid=ImgDetMain">
+        <p>Dacia Logan MCV - 250 lei/zi</p>
+      </div>
+      <div class="car-card" data-brand="toyota" data-year="2013" data-price="180">
+        <img src="https://th.bing.com/th/id/OIP.JSGG76If6ybOJHgKh8pZ0AHaE7?w=815&h=543&rs=1&pid=ImgDetMain">
+        <p>Toyota Prius  - 180 lei/zi</p>
+      </div>
+      <div class="car-card" data-brand="ford" data-year="2018" data-price="230">
+        <img src="https://www.topgear.com/sites/default/files/cars-car/image/2019/02/2018_ford_focus_st-line_red_11.jpg">
+        <p>Ford Focus - 230 lei/zi</p>
+      </div>
+      <div class="car-card" data-brand="mercedes" data-year="2023" data-price="490">
+        <img src="https://crazyrent.md/wp-content/uploads/notice/f5482/46fcd1973f7d570358400ae231e26254.jpg">
+        <p>Mercedes E-Class - 490 lei/zi</p>
+      </div>
+      <div class="car-card" data-brand="audi" data-year="2019" data-price="300">
+        <img src="https://car-images.bauersecure.com/pagefiles/4271/1752x1168/audi_a6.jpg?mode=max&quality=90&scale=down">
+        <p>Audi A6 - 300 lei/zi</p>
+    </div>
   </div>
 
   <script>
-    // Dark mode toggle
+    // Dark mode
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
       localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
     }
 
-    // Load saved preference
     window.onload = () => {
       if (localStorage.getItem("dark-mode") === "true") {
         document.body.classList.add("dark-mode");
       }
     };
+
+    // Filtrare
+    function applyFilters() {
+      const brand = document.getElementById("brand").value.toLowerCase();
+      const year = document.getElementById("year").value;
+      const priceRange = document.getElementById("price").value;
+
+      const cards = document.querySelectorAll(".car-card");
+
+      cards.forEach(card => {
+        const cardBrand = card.dataset.brand.toLowerCase();
+        const cardYear = card.dataset.year;
+        const cardPrice = parseInt(card.dataset.price);
+
+        let show = true;
+
+        if (brand && cardBrand !== brand) show = false;
+        if (year && cardYear !== year) show = false;
+
+        if (priceRange) {
+          const [min, max] = priceRange.split("-").map(Number);
+          if (cardPrice < min || cardPrice > max) show = false;
+        }
+
+        card.style.display = show ? "block" : "none";
+      });
+    }
+
+    // Schimbare automată la modificarea filtrelor
+    ["brand", "year", "price"].forEach(id => {
+      document.getElementById(id).addEventListener("change", applyFilters);
+    });
   </script>
 </body>
 </html>
