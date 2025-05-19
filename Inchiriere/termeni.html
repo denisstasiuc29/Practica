@@ -29,7 +29,6 @@
       --subnav-border: #333;
     }
 
-    /* Smooth transitions */
     * {
       box-sizing: border-box;
       transition:
@@ -45,9 +44,11 @@
       padding: 0;
       background-color: var(--bg);
       color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    /* Navbar */
     .navbar {
       position: fixed;
       top: 0;
@@ -60,7 +61,6 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      position: relative;
       flex-wrap: wrap;
       gap: 10px;
     }
@@ -77,7 +77,6 @@
       transform: translateX(-50%);
       display: flex;
       gap: 12px;
-      padding-left: 0;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -92,8 +91,6 @@
       font-weight: 600;
       font-size: 14px;
       box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      display: inline-block;
     }
 
     .navbar-right a:hover {
@@ -103,10 +100,8 @@
 
     .navbar-right a.active {
       background-color: var(--highlight-hover);
-      color: white;
     }
 
-    /* Buton schimbare temă */
     #theme-toggle {
       cursor: pointer;
       background: var(--highlight);
@@ -117,15 +112,14 @@
       font-weight: 600;
       font-size: 14px;
       box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       margin-left: 12px;
     }
+
     #theme-toggle:hover {
       background-color: var(--highlight-hover);
       box-shadow: 0 6px 12px rgba(255, 140, 0, 0.6);
     }
 
-    /* Sub-navbar */
     .sub-navbar {
       display: flex;
       justify-content: space-between;
@@ -134,7 +128,7 @@
       background-color: var(--subnav-bg);
       border-bottom: 1px solid var(--subnav-border);
       font-family: Arial, sans-serif;
-      margin-top: 60px; /* pentru navbar fix */
+      margin-top: 60px;
       color: var(--text);
     }
 
@@ -157,8 +151,7 @@
       margin-bottom: 1mm;
     }
 
-    /* Container */
-    .container {
+    main.container {
       max-width: 800px;
       margin: 40px auto;
       padding: 20px;
@@ -166,6 +159,7 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px var(--shadow);
       animation: fadeIn 0.8s ease-in-out;
+      flex: 1;
       color: var(--text);
     }
 
@@ -196,20 +190,52 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Footer */
+    .site-footer {
+      background-color: var(--nav-bg);
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      font-size: 0.9em;
+      box-shadow: 0 -2px 6px var(--shadow);
+      margin-top: 40px;
+    }
+
+    .site-footer a {
+      color: var(--highlight);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      color: var(--highlight-hover);
+      text-decoration: underline;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
     @media (max-width: 600px) {
       .navbar {
         justify-content: center;
       }
+
       .navbar-left {
         flex-basis: 100%;
         text-align: center;
         margin-bottom: 10px;
       }
+
       .navbar-right {
         position: static;
         transform: none;
         justify-content: center;
       }
+
       .sub-navbar {
         flex-direction: column;
         gap: 8px;
@@ -219,10 +245,10 @@
 </head>
 <body>
 
-  <!-- Navbar fix -->
+  <!-- Navbar -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar-left">📄 </div>
-     <div class="navbar-right">
+    <div class="navbar-left">📄</div>
+    <div class="navbar-right">
       <a href="rent.html">Acasă</a>
       <a href="parc-auto.html">Parc Auto</a>
       <a href="termeni.html" class="active" aria-current="page">Termeni și Condiții</a>
@@ -236,11 +262,11 @@
     <div class="center">RENTAUTTO</div>
   </div>
 
-  <!-- Conținut principal -->
+  <!-- Conținut -->
   <main class="container">
     <h1>Termeni și Condiții</h1>
     <p><strong>Condițiile de închiriere CarsRent.md</strong></p>
-    <p>✨ La RENTAUTTO.md ne dorim ca închirierea unei mașini să fie o experiență clară, rapidă și fără griji. Mai jos găsești toate condițiile – explicate simplu, fără clauze ascunse. Dacă ai vreo întrebare, echipa noastră este aici pentru tine.</p>
+    <p>✨ La RENTAUTTO.md ne dorim ca închirierea unei mașini să fie o experiență clară, rapidă și fără griji...</p>
 
     <div class="section-divider">📄 Termeni utilizați</div>
     <ul>
@@ -252,20 +278,13 @@
 
     <div class="section-divider">📅 Ce acte ai nevoie pentru a închiria un automobil?</div>
     <ul>
-      <li>🔹 Buletin de identitate sau pașaport – nu este obligatoriu să fie emis în Republica Moldova</li>
+      <li>🔹 Buletin de identitate sau pașaport</li>
       <li>🔹 Permis de conducere valabil</li>
     </ul>
-    <p>⚠️ Fără limită fixă de vârstă – discutăm individual, în funcție de client</p>
-    <p>⚠️ Vechimea permisului – flexibilă, în funcție de experiență și mașina aleasă</p>
-    <p>🚗 Suntem flexibili și găsim soluții potrivite pentru fiecare client!</p>
+    <p>⚠️ Fără limită fixă de vârstă...</p>
 
     <div class="section-divider">🚗 Ce este garanția?</div>
-    <p>Garanția este o sumă de bani care se achită la semnarea contractului și se restituie imediat la returnarea mașinii, dacă:</p>
-    <ul>
-      <li>nu există daune,</li>
-      <li>nu au fost încălcări contractuale,</li>
-      <li>nu există contravenții sau lipsuri.</li>
-    </ul>
+    <p>Garanția este o sumă de bani care se achită...</p>
 
     <div class="section-divider">🚑 Ce se întâmplă în caz de accident?</div>
     <ul>
@@ -273,29 +292,25 @@
       <li>Nu părăsi locul accidentului.</li>
       <li>Informează imediat managerul RENTAUTTO.md.</li>
     </ul>
-    <p>Dacă accidentul a fost provocat de alt participant, iar daunele sunt acoperite de RCA-ul acestuia, garanția ta nu este afectată, atâta timp cât respecți contractul.</p>
 
-    <div class="section-divider">🔒 Obligațiile clientului (Locatarului)</div>
+    <div class="section-divider">🔒 Obligațiile clientului</div>
     <ul>
-      <li>să conducă legal și responsabil, fără să depășească viteza de 130 km/h;</li>
-      <li>să nu folosească mașina ca taxi, pentru cursuri auto, curse sau competiții;</li>
-      <li>să nu iasă cu mașina din R. Moldova fără acord scris;</li>
-      <li>să nu transmită altcuiva mașina fără acordul nostru;</li>
-      <li>să restituie mașina curată, în starea în care a fost primită (cu uzură normală);</li>
-      <li>să aibă grijă de automobil ca de propriul bun.</li>
+      <li>să conducă legal și responsabil...</li>
     </ul>
 
-    <p>🛍️ Intenționezi să călătorești în afara Republicii Moldova?</p>
-    <p>Oferim posibilitatea de a utiliza autoturismul în afara țării, în baza unei oferte personalizate. Vă rugăm să ne contactați în prealabil pentru a obține toate detaliile necesare.</p>
-
-    <p>📆 Mașina se transmite și se restituie în baza unui proces-verbal (act de predare-primire), semnat de ambele părți.</p>
-
     <div class="section-divider">🚫 Cazuri în care putem refuza închirierea</div>
-    <p>Ne rezervăm dreptul de a nu oferi un automobil unei persoane, fără a oferi explicații, dacă avem motive întemeiate (ex: comportament agresiv, suspiciuni rezonabile etc.).</p>
+    <p>Ne rezervăm dreptul de a nu oferi un automobil...</p>
   </main>
 
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 RENTAUTTO.md | Toate drepturile rezervate</p>
+      <p><a href="mailto:contact@rentautto.md">contact@rentautto.md</a></p>
+    </div>
+  </footer>
+
   <script>
-    // Verifică tema salvată anterior
     const body = document.body;
     const toggleBtn = document.getElementById('theme-toggle');
 
@@ -311,7 +326,6 @@
       }
     }
 
-    // La încărcare
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       setTheme(true);
@@ -319,7 +333,6 @@
       setTheme(false);
     }
 
-    // Toggle la click
     toggleBtn.addEventListener('click', () => {
       const isDark = body.classList.contains('dark');
       setTheme(!isDark);

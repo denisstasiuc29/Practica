@@ -44,4 +44,10 @@
   // Filtrare la apăsarea butonului
   filterButton.addEventListener("click", filterCars);
 
+document.querySelector("#buton-rezultate").addEventListener("click", function(e) {
+  e.preventDefault();
+  document.querySelector("#rezultate-masini").scrollIntoView({ behavior: 'smooth' });
+});
+
+
 

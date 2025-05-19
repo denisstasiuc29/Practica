@@ -184,6 +184,29 @@
       padding: 12px;
       font-weight: bold;
     }
+
+    footer {
+      background-color: var(--navbar-bg);
+      color: var(--navbar-text);
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer img {
+      width: 150px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -200,7 +223,6 @@
 
   <h2>Parcul Nostru Auto</h2>
   <div class="main-content">
-    <!-- Sidebar -->
     <aside class="filter-sidebar">
       <h3>Filtrare</h3>
       <div class="filter-group">
@@ -219,7 +241,6 @@
         <label for="year">An fabricație</label>
         <select id="year">
           <option value="">Toți anii</option>
-          <!-- opțiuni scurte pentru demo -->
           <option value="2025">2025</option>
           <option value="2023">2023</option>
           <option value="2020">2020</option>
@@ -233,15 +254,14 @@
         <label for="price">Preț/zi</label>
         <select id="price">
           <option value="">Toate</option>
-          <option value="0-250">Sub 250 lei</option>
-          <option value="251-350">251–350 lei</option>
           <option value="351-500">351–500 lei</option>
+          <option value="501-1000">Peste 500 lei</option>
+          <option value="1001-2000">Peste 1000 lei</option>
         </select>
       </div>
       <button class="apply-btn" onclick="applyFilters()">Aplică filtre</button>
     </aside>
 
-    <!-- Car grid -->
     <div class="car-grid" id="carGrid">
       <div class="car-card" data-brand="audi" data-year="2025" data-price="400">
         <img src="https://www.automoli.com/common/vehicles/_assets/img/gallery/f106/audi-a4-b9-8w-facelift-2019.jpg">
@@ -253,7 +273,7 @@
       </div>
       <div class="car-card" data-brand="toyota" data-year="2013" data-price="180">
         <img src="https://th.bing.com/th/id/OIP.JSGG76If6ybOJHgKh8pZ0AHaE7?w=815&h=543&rs=1&pid=ImgDetMain">
-        <p>Toyota Prius  - 180 lei/zi</p>
+        <p>Toyota Prius - 180 lei/zi</p>
       </div>
       <div class="car-card" data-brand="ford" data-year="2018" data-price="230">
         <img src="https://www.topgear.com/sites/default/files/cars-car/image/2019/02/2018_ford_focus_st-line_red_11.jpg">
@@ -263,14 +283,40 @@
         <img src="https://crazyrent.md/wp-content/uploads/notice/f5482/46fcd1973f7d570358400ae231e26254.jpg">
         <p>Mercedes E-Class - 490 lei/zi</p>
       </div>
-      <div class="car-card" data-brand="audi" data-year="2019" data-price="300">
+      <div class="car-card" data-brand="audi" data-year="2019" data-price="800">
         <img src="https://car-images.bauersecure.com/pagefiles/4271/1752x1168/audi_a6.jpg?mode=max&quality=90&scale=down">
-        <p>Audi A6 - 300 lei/zi</p>
+        <p>Audi A6 - 800 lei/zi</p>
+      </div>
+      <div class="car-card" data-brand="bmw" data-year="2020" data-price="550">
+        <img src="https://www.auto-bild.ro/wp-content/uploads/2015/05/bmw-seria-3-facelift-90.jpg">
+        <p>BMW Seria 3 - 550 lei/zi</p>
+      </div>
+      <div class="car-card" data-brand="mercedes" data-year="2021" data-price="700">
+        <img src="https://www.thedetroitbureau.com/wp-content/uploads/2020/09/2021-Mercedes-S-Class-driving.jpg">
+        <p>Mercedes S-Class - 700 lei/zi</p>
+      </div>
+      <div class="car-card" data-brand="ford" data-year="2020" data-price="750">
+        <img src="https://th.bing.com/th/id/R.b21202ba463d300148659d9f63c182a2?rik=uyE1jFJ6JGM0ww&pid=ImgRaw&r=0">
+        <p>Ford Mustang - 750 lei/zi</p>
+      </div>
     </div>
   </div>
 
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1200px; margin: auto;">
+      RENTAUTTO
+      
+      <p>&copy; 2025 RentAUTTO. Toate drepturile rezervate.</p>
+      <div style="margin-top: 20px;">
+        <a href="politica-confidentialitate.html">Politica de confidențialitate</a>
+        <a href="termeni.html">Termeni și condiții</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    // Dark mode
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
       localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
@@ -282,7 +328,6 @@
       }
     };
 
-    // Filtrare
     function applyFilters() {
       const brand = document.getElementById("brand").value.toLowerCase();
       const year = document.getElementById("year").value;
@@ -309,7 +354,6 @@
       });
     }
 
-    // Schimbare automată la modificarea filtrelor
     ["brand", "year", "price"].forEach(id => {
       document.getElementById(id).addEventListener("change", applyFilters);
     });

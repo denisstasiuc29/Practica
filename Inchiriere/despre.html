@@ -2,8 +2,8 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Despre Noi - CarsRent.md</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Termeni și Condiții - CarsRent.md</title>
   <style>
     :root {
       --bg: #f8f8f8;
@@ -13,33 +13,40 @@
       --shadow: rgba(0, 0, 0, 0.1);
       --highlight: #ffa500;
       --highlight-hover: #ff8c00;
-      --subnav-bg: #f0f0f0;
+      --subnav-bg: #f3f3f3;
+      --subnav-border: #ddd;
+      --footer-bg: #1a1a1a;
+      --footer-text: #ccc;
     }
 
     body.dark {
       --bg: #121212;
-      --text: #e0e0e0;
+      --text: #ddd;
       --nav-bg: #000;
       --card-bg: #1f1f1f;
-      --shadow: rgba(255, 255, 255, 0.08);
+      --shadow: rgba(255, 255, 255, 0.1);
       --highlight: #ff9800;
       --highlight-hover: #ff6f00;
       --subnav-bg: #1a1a1a;
+      --subnav-border: #333;
+      --footer-bg: #000;
+      --footer-text: #aaa;
     }
 
     * {
       box-sizing: border-box;
-      transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+      transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
     }
 
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0 0 60px; /* padding jos pt footer */
       background-color: var(--bg);
       color: var(--text);
     }
 
+    /* Navbar */
     .navbar {
       position: fixed;
       top: 0;
@@ -51,27 +58,28 @@
       z-index: 1000;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     .navbar-left {
       font-size: 1.1em;
       font-weight: bold;
-      flex: 1;
+      flex-shrink: 0;
     }
 
-    .navbar-center {
+    .navbar-right {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       gap: 12px;
       align-items: center;
-      justify-content: center;
-      flex: 2;
       flex-wrap: wrap;
     }
 
-    .navbar-center a,
-    #theme-toggle {
+    .navbar-right a, #theme-toggle {
       background-color: var(--highlight);
       color: white;
       padding: 10px 18px;
@@ -81,30 +89,39 @@
       font-size: 14px;
       box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      border: none;
       cursor: pointer;
+      border: none;
     }
 
-    .navbar-center a:hover,
-    .navbar-center a.active,
-    #theme-toggle:hover {
+    .navbar-right a:hover, #theme-toggle:hover {
       background-color: var(--highlight-hover);
       box-shadow: 0 6px 12px rgba(255, 140, 0, 0.6);
     }
 
+    .navbar-right a.active {
+      background-color: var(--highlight-hover);
+    }
+
+    /* Sub-navbar */
     .sub-navbar {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 12px 30px;
+      padding: 8px 20px;
       background-color: var(--subnav-bg);
-      color: var(--text);
-      box-shadow: 0 2px 4px var(--shadow);
+      border-bottom: 1px solid var(--subnav-border);
       margin-top: 60px;
-      font-size: 1.7em;
+      color: var(--text);
+    }
+
+    .sub-navbar .center {
+      flex: 1;
+      text-align: center;
+      font-size: 1.5em;
       font-weight: bold;
     }
 
+    /* Container */
     .container {
       max-width: 800px;
       margin: 40px auto;
@@ -115,51 +132,66 @@
       animation: fadeIn 0.8s ease-in-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    h1, h2 {
+      color: var(--text);
+    }
+
+    p, li {
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    ul {
+      padding-left: 20px;
     }
 
     .section-divider {
       margin: 30px 0 15px;
       font-weight: bold;
       font-size: 1.2em;
+      opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer fix */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      padding: 12px 10px;
+      font-size: 0.9em;
+      box-shadow: 0 -2px 6px var(--shadow);
+      z-index: 999;
     }
 
     @media (max-width: 600px) {
       .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 15px 30px;
-  background-color: var(--nav-bg);
-  color: white;
-  box-shadow: 0 4px 6px var(--shadow);
-  z-index: 1000;
-  display: flex;
-  justify-content: center; /* centrăm tot conținutul */
-  align-items: center;
-  flex-wrap: wrap;
-}
+        justify-content: center;
+      }
 
-.navbar-center {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+      .navbar-left {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+      }
 
+      .navbar-right {
+        position: static;
+        transform: none;
+        justify-content: center;
+      }
 
       .sub-navbar {
         flex-direction: column;
-        text-align: center;
-        font-size: 1.5em;
         gap: 8px;
-      }
-
-      .container {
-        margin: 20px;
       }
     }
   </style>
@@ -167,58 +199,73 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar"> 
-  <div class="navbar-center">
-    <a href="rent.html">Acasă</a>
-    <a href="parc-auto.html">Parc Auto</a>
-    <a href="termeni.html">Termeni și Condiții</a>
-    <a href="despre.html" class="active">Despre Noi</a>
-    <button id="theme-toggle" aria-label="Schimbă tema">🌙 Dark Mode</button>
-  </div>
-</nav>
-
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-left">📄</div>
+    <div class="navbar-right">
+      <a href="rent.html">Acasă</a>
+      <a href="parc-auto.html">Parc Auto</a>
+      <a href="termeni.html" class="active" aria-current="page">Termeni și Condiții</a>
+      <a href="despre.html">Despre Noi</a>
+      <button id="theme-toggle" aria-label="Schimbă tema">🌙 Dark Mode</button>
+    </div>
+  </nav>
 
   <!-- Sub-navbar -->
-  <div class="sub-navbar">RENTAUTTO</div>
-
-  <!-- Conținut -->
-  <div class="container">
-    <h1>Despre Noi</h1>
-    <p><strong>RENTAUTTO.MD</strong> este o agenție de Închirieri Auto în R.Moldova, care are drept scop prestarea serviciilor de nișă, cu o experiență de primă clasă.</p>
-
-    <div class="section-divider">Viziunea companiei</div>
-    <p>Viziunea noastră este de a deveni cel mai important operator în domeniul Închirieri Auto din Republica Moldova, prin dezvoltarea continuă de noi relații și oportunități, și întotdeauna oferind servicii de înaltă calitate.</p>
-
-    <div class="section-divider">Valorile companiei</div>
-    <p><strong>Respect:</strong> Colaborăm împreună cu partenerii și furnizorii noștri cu respect și integritate pentru a dezvolta și menține relații de muncă de lungă durată și reciproc avantajoase.</p>
-
-    <p><strong>Pasiunea:</strong> Suntem pasionați de afacerea noastră. Avem grijă de clienții noștri prin calitatea serviciilor noastre; promovăm ideile și soluțiile creative și inovatoare.</p>
-
-    <p><strong>Excelență:</strong> Ne-am angajat să fim o organizație de înaltă performanță, focusată pe satisfacția totală a clientului. Analizăm continuu procesele noastre și pe noi înșine pentru a deveni cei mai buni dintre cei mai buni.</p>
+  <div class="sub-navbar">
+    <div class="center">RENTAUTTO</div>
   </div>
 
+  <!-- Conținut principal -->
+  <!-- Conținut principal -->
+<main class="container">
+  <h1>Despre noi</h1>
+  <p>CarsRent.MD este o agenție de Închirieri Auto în R.Moldova, care are drept scop prestarea serviciilor de nișă, cu o experiență de primă clasă.</p>
+
+  <div class="section-divider">🚀 Viziunea companiei</div>
+  <p>Viziunea noastră este de a deveni cel mai important operator în domeniul Închirieri Auto din Republica Moldova, prin dezvoltarea continuă de noi relații și oportunități, și întotdeauna oferind servicii de înaltă calitate.</p>
+
+  <div class="section-divider">💡 Valorile companiei</div>
+
+  <p><strong>Respect:</strong> Colaborăm împreună cu partenerii și furnizorii noștri cu respect și integritate pentru a dezvolta și menține relații de muncă de lungă durată și reciproc avantajoase.</p>
+
+  <p><strong>Pasiunea:</strong> Suntem pasionați de afacerea noastră. Avem grijă de clienții noștri prin calitatea serviciilor noastre; promovăm ideile și soluțiile creative și inovatoare.</p>
+
+  <p><strong>Excelență:</strong> Ne-am angajat să fim o organizație de înaltă performanță, focusată pe satisfacția totală a clientului. Analizăm continuu procesele noastre și pe noi înșine pentru a deveni cei mai buni dintre cei mai buni.</p>
+</main>
+
+
+  <!-- Footer fix -->
+  <footer>
+    &copy; 2025 RENTAUTTO.md. Toate drepturile rezervate.
+  </footer>
+
+  <!-- Script pentru toggle temă -->
   <script>
-    const toggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
+    const toggleBtn = document.getElementById('theme-toggle');
 
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    if (savedTheme === 'dark') {
-      body.classList.add('dark');
-      toggleBtn.textContent = '☀️ Light Mode';
-    } else {
-      toggleBtn.textContent = '🌙 Dark Mode';
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      if (body.classList.contains('dark')) {
-        body.classList.remove('dark');
-        toggleBtn.textContent = '🌙 Dark Mode';
-        localStorage.setItem('theme', 'light');
-      } else {
+    function setTheme(isDark) {
+      if (isDark) {
         body.classList.add('dark');
         toggleBtn.textContent = '☀️ Light Mode';
         localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove('dark');
+        toggleBtn.textContent = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
       }
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setTheme(true);
+    } else {
+      setTheme(false);
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark');
+      setTheme(!isDark);
     });
   </script>
 
