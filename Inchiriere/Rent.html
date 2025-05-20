@@ -51,24 +51,36 @@
     body.dark-mode .cars-list-container,
     body.dark-mode .car-card {
       background-color: #1e1e1e;
-      color: white;
+      color: rgb(255, 255, 255);
       border-color: #444;
     }
 
-    body.dark-mode .navbar-right a {
-      background-color: #333;
-      color: #eee;
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    }
+    
 
-    body.dark-mode .navbar-right a:hover,
-    body.dark-mode .navbar-right a.active {
-      background-color: #555;
-    }
+    
 
     body.dark-mode .search-button.outlined-blue {
       color: #90cdf4;
       border-color: #90cdf4;
+    }
+
+    body.dark-mode footer {
+      background-color: #181818 !important;
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode footer h4 {
+      color: #fff !important;
+    }
+
+    body.dark-mode footer a {
+      color: #90cdf4 !important;
+    }
+
+    body.dark-mode footer p,
+    body.dark-mode footer li,
+    body.dark-mode footer div {
+      color: #ccc !important;
     }
 
     /* Navbar principal */
@@ -167,6 +179,10 @@
       color: #222;
     }
 
+    body.dark-mode .sub-navbar .center {
+      color: #fff;
+    }
+
     #themeToggle {
       background: #007BFF;
       border: none;
@@ -199,24 +215,26 @@
     }
 
     .rent-left {
-      background-color: #007BFF;
-      color: white;
-      padding: 40px 30px;
-      position: relative;
-      width: 45%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8em;
-      font-weight: bold;
-      text-align: left;
-      line-height: 1.3;
-    }
-     
-    .rent-left h2 {
-  font-size: 1.4em;  /* mai mic decât înainte */
+  background-color: #007BFF;
+  color: white;
+  padding: 25px 18px;    /* mai puțin padding */
+  position: relative;
+  width: 35%;            /* mai îngustă */
+  min-width: 180px;      /* să nu fie prea mică pe ecrane mici */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;      /* mai mic */
+  font-weight: bold;
+  text-align: left;
   line-height: 1.2;
+}
+
+.rent-left h2 {
+  font-size: 1.1em;      /* mai mic decât înainte */
+  line-height: 1.1;
   font-weight: 700;
+  margin: 0;
 }
 
 
@@ -333,11 +351,15 @@
   text-align: center;
   background: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 410px; /* asigură înălțime egală pentru toate cardurile */
 }
 
     .car-card img {
   width: 100%;
-  height: 180px; /* mai înaltă */
+  height: 220px; /* era 220px, acum mai mare */
   object-fit: cover;
   border-radius: 8px;
 }
@@ -346,6 +368,7 @@
       margin-top: 10px;
       font-weight: 600;
       font-size: 1rem;
+      flex-grow: 1; /* împinge butonul în jos */
     }
 
    body.dark-mode .cars-list-container {
@@ -379,6 +402,24 @@ body.dark-mode input[type="time"] {
   border: 1px solid #555;
 }
 
+.book-btn {
+  margin-top: 14px;
+  padding: 7px 0;
+  width: 100%;
+  background: linear-gradient(120deg, #007BFF 48%, #ffa500 52%);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.98em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+  outline: none;
+  display: block;
+  align-self: flex-end;
+}
 
   </style>
 </head>
@@ -440,53 +481,229 @@ body.dark-mode input[type="time"] {
        <div class="car-card">
     <img src="https://assets-eu-01.kc-usercontent.com/bb5aba31-d98c-0160-8548-418b3723c58e/fd3665fd-f9bc-4cef-b398-edf1c3fe3798/Mercedes%20GLE%20(4).jpg" alt="Dacia Logan" />
     <p>Mercedes-Benz GLE - 1000 lei/zi</p>
-    </p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://th.bing.com/th/id/R.c7d98154104090af540834bac9ff5e4d?rik=chH%2fzukk70Pzaw&pid=ImgRaw&r=0" alt="BMW X5" />
     <p>Mercedes-Benz GLE 250 D 4MATIC - 850 lei/zi
     </p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://th.bing.com/th/id/OIP.BGerES2gy03i9iGrINvWzgHaFj?rs=1&pid=ImgDetMain" alt="Audi A4" />
     <p>Mercedes-Benz GLC Coupe - 875 lei/zi</p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://th.bing.com/th/id/R.5ef8677c9db45de1e17456565a18dd53?rik=VGm5CwaIILg0FQ&pid=ImgRaw&r=0" alt="Toyota Corolla" />
     <p>Porshe Cayenne - 1150 lei/zi</p>
+    <button class="book-btn">Bronare</button>
 </div>
   <div class="car-card">
     <img src="https://www.carscoops.com/wp-content/uploads/2018/11/e7c02aad-2019-toyota-rav4-xle.jpg" alt="Mercedes-Benz C-Class" />
     <p>Toyota Rav 4 - 700 lei/zi</p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://th.bing.com/th/id/OIP.Sx5QiaSSLn5ZuK2lApokpQHaE5?rs=1&pid=ImgDetMain" alt="Ford Focus" />
     <p>Volkswagen Touareg - 770 lei/zi</p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://carsrent.md/wp-content/uploads/notice/1004530/Toyota_Hyghlander_Chirie_Auto_Chisinau.jpg" alt="Honda Civic" />
     <p>Toyota Highlander 8 locuri - 890 lei/zi</p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://th.bing.com/th/id/OIP.cQ5Kb40ngqhgI8fB7nqUaQHaE8?rs=1&pid=ImgDetMain" alt="Toyota Camry" />
     <p>Lexus RX Series - 865 lei/zi</p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://th.bing.com/th/id/OIP.IBkZZRys4hS2cPZw0GCHJAHaE3?rs=1&pid=ImgDetMain" alt="VW Passat" />
     <p>BMW X3 - 700 lei/zi</p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://th.bing.com/th/id/OIP.r5qBprTbupspMes_YsmdOwHaEo?rs=1&pid=ImgDetMain" alt="Audi Q5" />
     <p>Audi Q5 2020 - 800 lei/zi</p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://th.bing.com/th/id/OIP.2Q2VjU0f_6zH8d7T5vuSmgHaEK?rs=1&pid=ImgDetMain" alt="Volkswagen Touareg" />
     <p>Audi A7 - 800 lei/zi</p>
+    <button class="book-btn">Bronare</button>
   </div>
   <div class="car-card">
     <img src="https://th.bing.com/th/id/R.8fd060fd5f71fa2be432f7ed82bf2726?rik=HVDpGB%2fjhKmbSA&pid=ImgRaw&r=0" alt="Mercedes-Benz E-Class" />
     <p>Lexus ES 300H - 650 lei/zi</p>
+    <button class="book-btn">Bronare</button>
   </div>
+  <div class="car-card">
+  <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/volvo-xc90-001.jpg?itok=GpuB-gjt" alt="Volvo XC90" />
+  <p>Volvo XC90 - 950 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://cdn.skoda-auto.com/images/sites/enmaster-v2/30e6c95e-6a67-4594-b9e4-c744bb95e884/1208a74f95b7a5189ee03f89caa142ef/ModelCharacterGalleryModule/7632a1f0aa516594d6a0e94356eefae7250acf63669750b30971a08237c5496b/Default_bp1920_1.webp" alt="Skoda Superb" />
+  <p>Skoda Superb - 600 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://www.usnews.com/object/image/00000193-02cf-d5bc-affb-b7ef3b810000/usnpx-2025hyundaitucson-angularfront-zd.jpg?update-time=1730919283987&size=responsive640" alt="Hyundai Tucson" />
+  <p>Hyundai Tucson - 550 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://avatars.mds.yandex.net/get-verba/1030388/2a000001874b5c98c9d4039e9b4b0e1827fb/cattouchret" alt="Mazda CX-5" />
+  <p>Mazda CX-5 - 580 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://www.topgear.com/sites/default/files/cars-car/image/2017/06/new_renault_koleosc_7_a_bernier.jpg" alt="Renault Koleos" />
+  <p>Renault Koleos - 520 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://repost.uz/storage/uploads/0-1702438211-avto11-post-material.png" alt="Kia Sportage" />
+  <p>Kia Sportage - 540 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://www.topgear.com/sites/default/files/2024/09/PEUGEOT_3008_EXT_13.jpg" alt="Peugeot 3008" />
+  <p>Peugeot 3008 - 530 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://www.topgear.com/sites/default/files/2022/06/161476_2019_CR-V_hybrid.jpg" alt="Honda CR-V" />
+  <p>Honda CR-V - 600 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://bani.md/wp-content/uploads/2022/11/nisan.jpg" alt="Nissan Qashqai" />
+  <p>Nissan Qashqai - 520 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://avatars.mds.yandex.net/get-verba/997355/2a0000017938195969ba94b3b80321e32110/cattouchret" alt="Seat Ateca" />
+  <p>Seat Ateca - 510 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://images.prismic.io/carwow/e3d05f90-200e-415f-ac76-416c33270619_2020+Ford+Kuga+front+quarter+moving+2.jpg" alt="Ford Kuga" />
+  <p>Ford Kuga - 560 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Mercedes-Benz/S-Class/10853/1690451611932/front-left-side-47.jpg" alt="Mercedes-Benz S-Class" />
+  <p>Mercedes-Benz S-Class - 1500 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://www.bmw.kg/content/dam/bmw/common/all-models/7-series/series-overview/bmw-7-series-sedan-ms-G12.jpg" alt="BMW 7 Series" />
+  <p>BMW 7 Series - 1400 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvkFw0s6z8PDx00pKW7h9faR232omSp-4n4Q&s" alt="Audi A8" />
+  <p>Audi A8 - 1350 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://hips.hearstapps.com/hmg-prod/images/2025-lexus-ls-500-f-sport-awd-101-67e30ab19aa60.jpg?crop=0.635xw:0.476xh;0.274xw,0.404xh&resize=1200:*" alt="Lexus LS" />
+  <p>Lexus LS - 1300 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://vehicle-images.dealerinspire.com/8fc2-110011872/LVYA22MK7MP197549/7871543901c490f7f6fa0bde7cbea9bf.jpg" alt="Volvo S90" />
+  <p>Volvo S90 - 1200 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://hips.hearstapps.com/hmg-prod/images/2024-jaguar-xf-p300-r-dynamic-101-64e8cdd02fc9a.jpg?crop=0.775xw:0.658xh;0.0879xw,0.203xh&resize=2048:*" alt="Jaguar XF" />
+  <p>Jaguar XF - 1100 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/2021_Tesla_Model_S_P2_Long_Range_front_right_view.jpg/960px-2021_Tesla_Model_S_P2_Long_Range_front_right_view.jpg" alt="Tesla Model S" />
+  <p>Tesla Model S - 1250 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://hips.hearstapps.com/hmg-prod/images/2024-porsche-panamera-turbo-s-e-hybrid-107-670fd2342993b.jpg?crop=0.758xw:0.639xh;0.139xw,0.262xh&resize=1200:*" alt="Porsche Panamera" />
+  <p>Porsche Panamera - 1600 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://maserati.scene7.com/is/image/maserati/maserati/international/model-page/quattroporte/design/214300M-exterior%20(1).jpg?$1400x2000$&fit=constrain" alt="Maserati Quattroporte" />
+  <p>Maserati Quattroporte - 1700 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://media.ed.edmunds-media.com/genesis/g80/2025/oem/2025_genesis_g80_sedan_35t-sport-prestige_fq_oem_1_1600.jpg" alt="Genesis G80" />
+  <p>Genesis G80 - 1150 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://www.infinitiusa.com/content/dam/Infiniti/US/vehicles/Q50/2024/overview/2024-infiniti-q50-luxury-sedan-d-v1.jpg" alt="Infiniti Q60" />
+  <p>Alfa Romeo Giulia - 950 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOK3o-ykXpRYzI9jNAYY811_iPY2aAjt7FCw&s" alt="Infiniti Q50" />
+  <p>Infiniti Q50 - 900 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://hips.hearstapps.com/hmg-prod/images/2020-cadillac-ct6-v-3-front-quarter-1564851658.jpg?crop=0.814xw:0.689xh;0.142xw,0.154xh&resize=2048:*" alt="Cadillac CT6" />
+  <p>Cadillac CT6 - 1450 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://static01.nyt.com/images/2017/06/04/automobiles/autoreviews/driven-lincoln-continential-pic/driven-lincoln-continential-pic-videoSixteenByNine3000.jpg" alt="Lincoln Continental" />
+  <p>Lincoln Continental - 1300 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://hips.hearstapps.com/hmg-prod/images/2020-toyta-camry-mmp-1-1566921359.jpg?crop=0.878xw:0.737xh;0.0554xw,0.263xh&resize=1200:*" alt="Toyota Camry" />
+  <p>Toyota Camry - 700 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://images.drive.ru/i/0/505c3ac8b721422c1b00000f.jpg" alt="Honda Accord" />
+  <p>Honda Accord - 680 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://redriven.com/wp-content/uploads/2022/11/Ford-Mondeo-Trend-1-scaled.jpg" alt="Ford Mondeo" />
+  <p>Ford Mondeo - 650 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://avatars.mds.yandex.net/get-verba/3587101/2a0000018e74a5a5fe8a0ebd8d0c130709b1/cattouchret" alt="Skoda Octavia" />
+  <p>Skoda Octavia - 600 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://avatars.mds.yandex.net/get-verba/1540742/2a0000018bec0b65eff8157552feeb463a8c/cattouchret" alt="Peugeot 508" />
+  <p>Peugeot 508 - 620 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://dd-tuning.md/assets/galleries/73764/594/012afftq.jpg" alt="Renault Talisman" />
+  <p>Renault Talisman - 610 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/5-Series-2024/10182/1685002609273/front-left-side-47.jpg" alt="BMW 5 Series" />
+  <p>BMW 5 Series - 900 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
+<div class="car-card">
+  <img src="https://www.ixbt.com/img/n1/news/2023/10/2/photo_2023-04-25_22-15-49_large.jpg" alt="Mercedes-Benz E-Class" />
+  <p>Mercedes-Benz E-Class - 950 lei/zi</p>
+  <button class="book-btn">Bronare</button>
+</div>
   </section>
     </div>
   </div>

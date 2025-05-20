@@ -336,8 +336,8 @@
       const cards = document.querySelectorAll(".car-card");
 
       cards.forEach(card => {
-        const cardBrand = card.dataset.brand.toLowerCase();
-        const cardYear = card.dataset.year;
+        const cardBrand = card.dataset.brand ? card.dataset.brand.toLowerCase() : "";
+        const cardYear = card.dataset.year || "";
         const cardPrice = parseInt(card.dataset.price);
 
         let show = true;
@@ -346,8 +346,12 @@
         if (year && cardYear !== year) show = false;
 
         if (priceRange) {
-          const [min, max] = priceRange.split("-").map(Number);
-          if (cardPrice < min || cardPrice > max) show = false;
+          if (priceRange.includes("-")) {
+            const [min, max] = priceRange.split("-").map(Number);
+            if (cardPrice < min || cardPrice > max) show = false;
+          } else if (priceRange === "1001-2000") {
+            if (cardPrice < 1001 || cardPrice > 2000) show = false;
+          }
         }
 
         card.style.display = show ? "block" : "none";

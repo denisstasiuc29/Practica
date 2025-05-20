@@ -3,31 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pagina Principală</title>
+  <title>Închirierea Automobilelor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Stiluri comune */
     :root {
-      --bg-color: #0d1b2a;
-      --navbar-bg: #1b263b;
-      --accent: #0077b6;
-      --text: #ffffff;
-      --input-bg: #415a77;
-      --input-border: #778da9;
-      --hover: #00b4d8;
-    }
+  --bg-color: #0d1b2a;
+  --navbar-bg: #2d4f7c; /* Culoare mai deschisă decât înainte */
+  --accent: #f8aa00;
+  --accent-dark: #d99100;
+  --text: #ffffff;
+  --text-light: #cbd5e1;
+  --card-bg: #243447;
+}
+
 
     body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1f1f1f, #2c3e50);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      flex-direction: column;
-      padding-top: 70px;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: 
+    linear-gradient(rgba(31, 31, 31, 0.85), rgba(44, 62, 80, 0.85)),
+    url('https://www.reliancegeneral.co.in/siteassets/rgiclassets/images/blogs-images/top-5-fastest-cars-in-the-world2.webp') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 
     /* Navbar */
     .navbar {
@@ -35,115 +37,117 @@
       top: 0;
       width: 100%;
       background-color: var(--navbar-bg);
-      padding: 12px 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
       z-index: 1000;
     }
 
     .navbar-content {
-      width: 90%;
       max-width: 1200px;
       margin: 0 auto;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .navbar .left a {
+    .navbar a {
       margin: 0 10px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 16px;
       padding: 8px 14px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .navbar .left a:hover {
-      background-color: var(--hover);
+    .navbar a:hover {
+      background-color: var(--accent);
+      color: #000;
+      transform: translateY(-2px);
     }
 
-    .navbar .right {
-      font-size: 18px;
-      font-weight: bold;
-      color: var(--accent);
+    /* Main content */
+    .main-content {
+      margin-top: 100px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
 
-    /* Form container */
     .form-container {
-      background-color: var(--navbar-bg);
+      background-color: var(--card-bg);
       padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      width: 340px;
-      margin: 60px 20px;
-      animation: fadeIn 0.6s ease-out;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 420px;
       text-align: center;
+      animation: fadeIn 0.6s ease-out;
     }
 
     .form-container h2 {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-size: 26px;
     }
 
-    p {
-      color: var(--text);
+    .form-container p {
+      margin-bottom: 24px;
       font-size: 16px;
+      color: var(--text-light);
     }
 
     button {
       width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      background-color: var(--hover);
-      color: white;
+      padding: 14px;
+      margin-bottom: 16px;
+      background-color: var(--accent);
+      color: #000;
       font-size: 16px;
+      font-weight: bold;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: var(--accent-dark);
       transform: scale(1.03);
     }
 
     /* Footer */
     .footer {
       background-color: var(--navbar-bg);
-      color: var(--text);
-      width: 100%;
       text-align: center;
       padding: 20px 10px;
-      margin-top: auto;
-      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
       font-size: 14px;
+      color: var(--text);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
     }
 
-    .footer p {
-      margin: 8px 0;
+    .contact-info {
+      margin-top: 10px;
+      font-size: 15px;
     }
 
-    .footer .contact-info {
-      font-size: 16px;
-    }
-
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       .navbar-content {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
         text-align: center;
       }
 
       .form-container {
         width: 90%;
+        padding: 30px 20px;
       }
     }
   </style>
@@ -154,31 +158,35 @@
   <div class="navbar">
     <div class="navbar-content">
       <div class="left">
-        <a href="Rent.html">My Project</a>
+        <a href="Rent.html">Acasă</a>
+        <a href="parc-auto.html">Autoturisme</a>
+        <a href="termeni.html">Contact</a>
       </div>
-      <div>
-        <a href="register.html">Register</a>
-        <a href="login.html">Log in</a>
-        <a href="logout.html">Log out</a>
+      <div class="right">
+        <a href="register.html">Înregistrare</a>
+        <a href="login.html">Autentificare</a>
+        <a href="logout.html">Ieșire</a>
       </div>
     </div>
   </div>
 
-  <!-- Content -->
-  <div class="form-container">
-    <h2>Salut!</h2>
-    <p>Please choose one of the options below:</p>
-    <button onclick="location.href='register.html'">Register</button>
-    <button onclick="location.href='login.html'">Log in</button>
-    <button onclick="location.href='logout.html'">Log out</button>
+  <!-- Main content -->
+  <div class="main-content">
+    <div class="form-container">
+      <h2>Bine ați venit!</h2>
+      <p>Selectați o opțiune pentru a continua:</p>
+      <button onclick="location.href='register.html'">Înregistrare</button>
+      <button onclick="location.href='login.html'">Autentificare</button>
+      <button onclick="location.href='logout.html'">Ieșire</button>
+    </div>
   </div>
 
   <!-- Footer -->
   <div class="footer">
-    <p>&copy; 2025 Inchirierea Automobilelor</p>
+    <p>&copy; 2025 Închirierea Automobilelor. Toate drepturile rezervate.</p>
     <div class="contact-info">
       <p>Telefon: 062011064</p>
-      <p>Ne găsiți în Chișinău, Moldova</p>
+      <p>Adresă: Chișinău, Moldova</p>
     </div>
   </div>
 

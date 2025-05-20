@@ -75,6 +75,17 @@ body {
   z-index: 1000;
 }
 
+body.dark-mode .navbar-right a {
+  background-color: #333;
+  color: #eee;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .navbar-right a:hover,
+body.dark-mode .navbar-right a.active {
+  background-color: #555;
+}
+
 .navbar-center .dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -331,4 +342,20 @@ button:hover {
   .car-card {
     padding: 15px;
   }
+}
+
+.book-btn {
+  margin-top: 12px;
+  padding: 8px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.book-btn:hover {
+  background-color: #0056b3;
 }
